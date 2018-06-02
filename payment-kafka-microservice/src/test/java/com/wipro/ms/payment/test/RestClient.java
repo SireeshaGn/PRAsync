@@ -23,6 +23,7 @@ RestTemplate restTemplate;
 		System.out.println("Begin /GET request!");
 		//String getUrl = "http://localhost:9084/api/payment/process?orderId=2000&amount=500";
 		String getUrl = "http://localhost:9084/api/payment/process";
+		String paymentPath="/api/payment/process";
 		String restUrl = UriComponentsBuilder.fromUriString(getUrl).queryParam("orderId", 2000).queryParam("amount", 800).build().toUri().toString();
 		System.out.println("restUrl:"+restUrl);
 		ResponseEntity<String> getResponse = restTemplate.getForEntity(restUrl, String.class);
